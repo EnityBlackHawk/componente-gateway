@@ -1,1 +1,35 @@
-spring.application.name=componente-gateway
+spring:
+  application:
+    nama: componente-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: cmp-produtos
+          uri: ${CMP_PRODUTOS_URI:http://localhost:8081}
+          predicates:
+            - Path=/product/**
+
+        - id: cmp-vendas
+          uri: ${CMP_VENDAS_URI:http://localhost:8082}
+          predicates:
+            - Path=/api/**
+
+        - id: cmp-ecommerce
+          uri: ${CMP_ECOMMERCE_URI:http://localhost:8083}
+          predicates:
+            - Path=/ecommerce/**
+
+
+        - id: cmp-pagamentos
+          uri: ${CMP_PAGAMENTOS_URI:http://localhost:8084}
+          predicates:
+              - Path=/payment/**
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web: DEBUG
