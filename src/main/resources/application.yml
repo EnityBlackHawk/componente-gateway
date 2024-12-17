@@ -20,11 +20,10 @@ spring:
           predicates:
             - Path=/ecommerce/**
 
-
         - id: cmp-pagamentos
           uri: ${CMP_PAGAMENTOS_URI:http://localhost:8084}
           predicates:
-              - Path=/payment/**
+              - Path=/payments/**
 
 server:
   port: 8080
