@@ -9,6 +9,7 @@ spring:
           uri: ${CMP_PRODUTOS_URI:http://localhost:8081}
           predicates:
             - Path=/product/**
+            - Path=/supplier/**
 
         - id: cmp-vendas
           uri: ${CMP_VENDAS_URI:http://localhost:8082}
