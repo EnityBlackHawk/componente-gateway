@@ -6,10 +6,9 @@ spring:
     gateway:
       routes:
         - id: cmp-produtos
-          uri: ${CMP_PRODUTOS_URI:http://localhost:8081}
+          uri: ${CMP_PRODUTOS_URI}
           predicates:
             - Path=/product/**
-            - Path=/supplier/**
 
         - id: cmp-vendas
           uri: ${CMP_VENDAS_URI:http://localhost:8082}
