@@ -25,6 +25,11 @@ spring:
           predicates:
               - Path=/payments/**
 
+        - id: cmp-auth
+          uri: ${CMP_AUTH_URI:http://localhost:8085}
+          predicates:
+              - Path=/login
+
 server:
   port: 8080
 
